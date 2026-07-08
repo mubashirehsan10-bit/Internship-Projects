@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deterministic Chatbot - Project 1</title>
+    <meta name="description" content="A premium rule-based chatbot built with deterministic dictionary intent mapping.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+    <!-- Custom Style Sheet -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="glow-container">
+        <div class="glow-orb orb-1"></div>
+        <div class="glow-orb orb-2"></div>
+    </div>
+    
+    <main class="chat-container">
+        <!-- Chat Header -->
+        <header class="chat-header" id="chat-header-main">
+            <div class="bot-info">
+                <div class="avatar-container">
+                    <div class="bot-avatar">🤖</div>
+                    <span class="status-indicator online"></span>
+                </div>
+                <div class="bot-details">
+                    <h1>LogicEngine v1.0</h1>
+                    <p class="status-text">Deterministic Rule Matcher</p>
+                </div>
+            </div>
+            <div class="header-actions">
+                <span class="badge">O(1) Complexity</span>
+            </div>
+        </header>
+
+        <!-- Message History -->
+        <section class="chat-messages" id="chat-history-area" aria-label="Conversation History">
+            <div class="message system-msg">
+                <span class="msg-icon">⚙️</span>
+                <p>System Initialized. Chatbot is running. Capitalization and extra whitespace are sanitized automatically. Try asking about <strong>Hello</strong>, <strong>Help</strong>, <strong>About</strong>, <strong>Contact</strong>, or a <strong>Joke</strong>. Type <strong>exit</strong> to quit.</p>
+            </div>
+        </section>
+
+        <!-- Message Input -->
+        <form class="chat-input-form" id="chat-form" autocomplete="off">
+            <label for="user-input-field" class="sr-only">Type your message</label>
+            <input 
+                type="text" 
+                id="user-input-field" 
+                placeholder="Send a message (e.g. 'hello', 'help', 'exit')..." 
+                required 
+                autofocus
+            >
+            <button type="submit" id="send-button" aria-label="Send message">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="22" y1="2" x2="11" y2="13"></line>
+                    <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                </svg>
+            </button>
+        </form>
+    </main>
+
+    <!-- Custom Script -->
+    <script src="js/chatbot.js"></script>
+</body>
+</html>
