@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Tech Stack Recommender - Project 3</title>
+    <meta name="description" content="Vector similarity matching engine using TF-IDF weighting and Cosine Similarity.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+    <!-- Custom Style Sheet -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="glow-container">
+        <div class="glow-orb orb-1"></div>
+        <div class="glow-orb orb-2"></div>
+    </div>
+    
+    <main class="dashboard-container">
+        <!-- Header -->
+        <header class="dashboard-header">
+            <div class="brand">
+                <div class="brand-avatar">🎯</div>
+                <div class="brand-details">
+                    <h1>MatchmakerEngine v3.0</h1>
+                    <p>AI Career Path & Tech Stack Recommender</p>
+                </div>
+            </div>
+            <div class="header-badge">
+                <span class="badge">TF-IDF Vector</span>
+                <span class="badge">Cosine Similarity</span>
+            </div>
+        </header>
+
+        <!-- Main Body -->
+        <section class="dashboard-body">
+            <!-- Left Side: Skill Selector chips -->
+            <div class="dashboard-panel input-panel">
+                <h2>Skill Onboarding Survey</h2>
+                <p class="panel-subtitle">Select the technology skills you know or are interested in. You must choose at least 3 skills to trigger recommendation calculations.</p>
+                
+                <div class="skills-grid" id="skill-chips-container">
+                    <!-- Loaded dynamically via JS -->
+                </div>
+
+                <div class="warning-msg" id="warning-msg">
+                    ⚠️ <strong>User Cold Start Guardrail:</strong> Please select a minimum of <strong>3 skills</strong> to generate a dense preference profile.
+                </div>
+            </div>
+
+            <!-- Right Side: Recommendations list -->
+            <div class="dashboard-panel results-panel">
+                <h2>Top 3 Career Matches</h2>
+                <p class="panel-subtitle">Matched via vector angular alignment calculations.</p>
+                
+                <div class="recommendations-list" id="recommendations-list">
+                    <div class="empty-state">Awaiting minimum inputs...</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bottom Row: TF-IDF Math Explorer -->
+        <section class="dashboard-footer">
+            <h2>TF-IDF Vector Alignments (#1 Match Details)</h2>
+            <p class="panel-subtitle">Calculated feature weights representing Term Frequency (TF) times Inverse Document Frequency (IDF) relative to the top recommended path.</p>
+            
+            <div class="table-wrapper">
+                <table class="math-table">
+                    <thead>
+                        <tr>
+                            <th>Skill Dimension</th>
+                            <th>User Weight ($U_i$)</th>
+                            <th>Job Role Weight ($V_i$)</th>
+                            <th>Dot Product ($U_i \times V_i$)</th>
+                        </tr>
+                    </thead>
+                    <tbody id="matrix-table-body">
+                        <!-- Loaded dynamically via JS -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <!-- Source Scripts -->
+    <script src="js/data.js"></script>
+    <script src="js/engine.js"></script>
+</body>
+</html>
